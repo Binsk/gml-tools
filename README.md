@@ -6,10 +6,10 @@ This repository holds a number of gml-based tools that complement GameMaker's ex
 
 # Tools
 
+* [Signaler](scripts/scr_signals/scr_signals.gml)
+
 ## Signaler
 
 **About:** Signalers provide a way to attach any number of methods to a text label which will be executed in order simply by calling the label. Each method can be given arguments both when attached and when called thus providing a very effective way to execute actions in a more passive manner.
 
 **Dependencies:** None
-
-**Class:** [Link](scripts/scr_signals/scr_signals.gml)
