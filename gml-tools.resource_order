@@ -3,5 +3,9 @@
     {"name":"Classes","order":1,"path":"folders/Classes.yy",},
     {"name":"Demos","order":2,"path":"folders/Demos.yy",},
   ],
-  "ResourceOrderSettings": [],
+  "ResourceOrderSettings": [
+    {"name":"obj_signalers_demo_square","order":3,"path":"objects/obj_signalers_demo_square/obj_signalers_demo_square.yy",},
+    {"name":"obj_signalers_demo_circle","order":1,"path":"objects/obj_signalers_demo_circle/obj_signalers_demo_circle.yy",},
+    {"name":"room_signalers_demo","order":2,"path":"rooms/room_signalers_demo/room_signalers_demo.yy",},
+  ],
 }
