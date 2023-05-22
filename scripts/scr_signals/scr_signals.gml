@@ -72,11 +72,7 @@ function Signaler() constructor{
         	if (is_struct(inst))
         		return SIGNALER_FUNCREF_TYPE.method_struct;
         	
-        		// Explicitly checking last case for readability reasons:
-        	if (is_numeric(inst) or is_ptr(inst))
-        		return SIGNALER_FUNCREF_TYPE.method_instance;
-        	
-        	return undefined; // Should never occur
+    		return SIGNALER_FUNCREF_TYPE.method_instance;
         }
         
         /// @desc   Returns if the struct / instance of the method still exists
@@ -139,13 +135,14 @@ function Signaler() constructor{
         
         // Grab all funcrefs that need to be cleared:
         for (var i = 0; i < key_len; ++i){
-            var array = key_array[i];
+            var key = key_array[i];
+            var array = signal_map[$ key_array[i]];
             var array_len = array_length(array);
             for (var j = 0; j < array_len; ++j){
                 var funcref = array[j];
                 if (funcref.get_type() != SIGNALER_FUNCREF_TYPE.method_instance)
                     continue;
-                
+                    
                 if (method_get_self(funcref.fr_method) == inst_id)
                     array_push(clear_array, funcref);
             }
