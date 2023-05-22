@@ -1,0 +1,1 @@
+loader.clear_task_queue();
