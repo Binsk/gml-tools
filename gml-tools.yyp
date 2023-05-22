@@ -9,11 +9,13 @@
     "children": [],
     "name": "Default",
   },
-  "defaultScriptType": 0,
+  "defaultScriptType": 1,
   "Folders": [
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Classes","folderPath":"folders/Classes.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Demos","folderPath":"folders/Demos.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Controllers","folderPath":"folders/Demos/Controllers.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Signalers","folderPath":"folders/Demos/Signalers.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Objects","folderPath":"folders/Objects.yy",},
   ],
   "IncludedFiles": [],
   "isEcma": false,
@@ -23,12 +25,17 @@
   },
   "resources": [
     {"id":{"name":"obj_signalers_demo_square","path":"objects/obj_signalers_demo_square/obj_signalers_demo_square.yy",},},
+    {"id":{"name":"obj_controllers_demo_controller","path":"objects/obj_controllers_demo_controller/obj_controllers_demo_controller.yy",},},
     {"id":{"name":"obj_signalers_demo_circle","path":"objects/obj_signalers_demo_circle/obj_signalers_demo_circle.yy",},},
+    {"id":{"name":"obj_controller_manager","path":"objects/obj_controller_manager/obj_controller_manager.yy",},},
     {"id":{"name":"obj_signalers_demo_controller","path":"objects/obj_signalers_demo_controller/obj_signalers_demo_controller.yy",},},
+    {"id":{"name":"obj_controllers_demo_player","path":"objects/obj_controllers_demo_player/obj_controllers_demo_player.yy",},},
+    {"id":{"name":"room_controllers_demo","path":"rooms/room_controllers_demo/room_controllers_demo.yy",},},
     {"id":{"name":"room_signalers_demo","path":"rooms/room_signalers_demo/room_signalers_demo.yy",},},
     {"id":{"name":"scr_signals","path":"scripts/scr_signals/scr_signals.yy",},},
   ],
   "RoomOrderNodes": [
+    {"roomId":{"name":"room_controllers_demo","path":"rooms/room_controllers_demo/room_controllers_demo.yy",},},
     {"roomId":{"name":"room_signalers_demo","path":"rooms/room_signalers_demo/room_signalers_demo.yy",},},
   ],
   "TextureGroups": [
