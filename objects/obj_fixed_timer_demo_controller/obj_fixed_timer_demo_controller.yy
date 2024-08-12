@@ -1,16 +1,17 @@
 {
   "$GMObject":"",
-  "%Name":"obj_controllers_demo_player",
+  "%Name":"obj_fixed_timer_demo_controller",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_controllers_demo_player",
+  "name":"obj_fixed_timer_demo_controller",
   "overriddenProperties":[],
   "parent":{
-    "name":"Controllers",
-    "path":"folders/Demos/Controllers.yy",
+    "name":"Fixed Timer",
+    "path":"folders/Demos/Fixed Timer.yy",
   },
   "parentObjectId":null,
   "persistent":false,

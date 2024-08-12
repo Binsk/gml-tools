@@ -1,0 +1,1 @@
+draw_rectangle_color(x - 32, y - 64, x + 32, y, c_white, c_white, c_white, c_white, false);

@@ -3,7 +3,7 @@ draw_set_alpha(1.0);
 draw_set_halign(fa_left);
 draw_set_valign(fa_top);
 
-draw_text(24, 24, "FPS: " + string(fps) + " / " + string(room_speed));
+draw_text(24, 24, "FPS: " + string(fps) + " / " + string(game_get_speed(gamespeed_fps)));
 draw_text(24, 24, string_ext("\nMax frametime: {0} (ms)", [floor(max_frametime)]));
 draw_text(24, 24, "\n\n'space' to begin an expensive processing task\n'up/down' arrows to change allotted frametime\n'enter' to cancel remaining tasks");
 

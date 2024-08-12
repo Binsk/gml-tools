@@ -9,6 +9,7 @@ This repository holds a number of gml-based tools that complement GameMaker's ex
 * [Signaler](scripts/scr_signals/scr_signals.gml)
 * [Controller Handler](objects/obj_controller_manager)
 * [Load Timer](objects/obj_load_timer)
+* [Fixed Timer](objects/obj_fixed_timer)
 
 ### Signaler
 
@@ -25,5 +26,11 @@ This repository holds a number of gml-based tools that complement GameMaker's ex
 ### Load Timer
 
 **About:** The load timer helps distribute expensive CPU tasks across multiple frames. It can be used to queue a large number of individual tasks or even split up a single expensive function. You can specify the maximum frametime allotment the system will use and functions are provided to store and retrieve states of scripts to assist in spreading out calculations.
+
+**Dependencies:** Signaler
+
+### Fixed Timer
+
+**About:** The fixed timer helps execute local instance functions at a stable framerate on delta-timed systems. As an example, the fixed timer can handle updating an instance's velocity while the instance's regular delta-timed step event handles updating the position. This results in consistent jumping and falling rates while providing a smooth positional update regardless of framerate.
 
 **Dependencies:** Signaler
