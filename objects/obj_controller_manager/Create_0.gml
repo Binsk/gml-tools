@@ -293,10 +293,11 @@ function disconnect_player(player_index, allow_reserved=true){
         
     var data = player_array[player_index];
     
-    if (data.connection_state == CONTROLLERMAP_STATE.connected)
-        signaler.signal("disconnected", player_index);
-    
+    var state = data.connection_state;
     data.connection_state = (allow_reserved and allow_slot_reassigning ? CONTROLLERMAP_STATE.reserved : CONTROLLERMAP_STATE.disconnected);
+    
+    if (state == CONTROLLERMAP_STATE.connected)
+        signaler.signal("disconnected", player_index);
 }
 
 /// @desc   Forces a player's state to be marked as connected. This is generally
@@ -308,10 +309,11 @@ function connect_player(player_index){
     
     var data = player_array[player_index];
     
-    if (data.connection_state != CONTROLLERMAP_STATE.connected)
-        signaler.signal("reconnected", player_index);
-    
+    var state = data.connection_state
     data.connection_state = CONTROLLERMAP_STATE.connected;
+    
+    if (state != CONTROLLERMAP_STATE.connected)
+        signaler.signal("reconnected", player_index);
 }
 
 /// @desc	Scan for new devices as well as newly disconnected devices. Player slots
@@ -326,6 +328,7 @@ function scan(){
         if (gamepad_is_connected(i)){
             // Check if the player exists; if so determine if it is a reconnect:
             var j = 0;
+            var did_reconnect = false;
             for (; j < player_count; ++j){
                 var data = player_array[j];
                 if (data.slot_id != i) continue;
@@ -334,8 +337,12 @@ function scan(){
                     signaler.signal("reconnected", j);
                     
                 data.connection_state = CONTROLLERMAP_STATE.connected;
+                did_reconnect = true;
                 break;
             }
+            
+            if (did_reconnect)
+            	continue;
             
             // If no reconnect, next test for reassignments.
             // NOTE: the state will be 'reserved' if reassigning is disabled
@@ -356,14 +363,15 @@ function scan(){
         }
         // If the gamepad is NOT connected; 
         else{
-            for (var j = 0; j < player_count; ++j){
+            for (var j = 0; j < array_length(player_array); ++j){
                 var data = player_array[j];
                 if (data.slot_id != i) continue;
                 
-                if (data.connection_state == CONTROLLERMAP_STATE.connected)
-                    signaler.signal("disconnected", j);
-                
+                var state = data.connection_state;
                 data.connection_state = (allow_slot_reassigning ? CONTROLLERMAP_STATE.disconnected : CONTROLLERMAP_STATE.reserved);
+                
+                if (state == CONTROLLERMAP_STATE.connected)
+                    signaler.signal("disconnected", j);
             }
         }
     }
