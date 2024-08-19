@@ -26,7 +26,7 @@ function connect(instance=other.id){
 /// @desc	Disconnects the calling (or specified) instance to the fixed timer.
 function disconnect(instance=other.id){
 	if (variable_instance_exists(instance, "step_begin_fixed"))
-		signaler.aremovesignal("tick_begin", method(instance, instance.step_begin_fixed));
+		signaler.remove_signal("tick_begin", method(instance, instance.step_begin_fixed));
 	if (variable_instance_exists(instance, "step_fixed"))
 		signaler.remove_signal("tick", method(instance, instance.step_fixed));
 	if (variable_instance_exists(instance, "step_end_fixed"))
