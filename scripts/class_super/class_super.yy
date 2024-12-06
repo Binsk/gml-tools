@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"scr_signals",
+  "%Name":"class_super",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scr_signals",
+  "name":"class_super",
   "parent":{
     "name":"Classes",
     "path":"folders/Classes.yy",

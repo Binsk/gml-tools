@@ -6,10 +6,11 @@ This repository holds a number of gml-based tools that complement GameMaker's ex
 
 # Tools
 
-* [Signaler](scripts/scr_signals/scr_signals.gml)
+* [Signaler](scripts/class_signals/class_signals.gml)
 * [Controller Handler](objects/obj_controller_manager)
 * [Load Timer](objects/obj_load_timer)
 * [Fixed Timer](objects/obj_fixed_timer)
+* [Super](scripts/class_super/class_super.gml)
 
 ### Signaler
 
@@ -34,3 +35,9 @@ This repository holds a number of gml-based tools that complement GameMaker's ex
 **About:** The fixed timer helps execute local instance functions at a stable framerate on delta-timed systems. As an example, the fixed timer can handle updating an instance's velocity while the instance's regular delta-timed step event handles updating the position. This results in consistent jumping and falling rates while providing a smooth positional update regardless of framerate.
 
 **Dependencies:** Signaler
+
+### Super
+
+**About:** The super class helps simulate function inheritance inside of constructors. You can create a Super() inside of a class and register parent functions before overriding them in a child class. Inside of the child class you can execute the super in order to execute all recorded funtions up to that point. The system automatically handles chaining inheritance, passing arguments, and accessing return values.
+
+**Dependencies:** None
