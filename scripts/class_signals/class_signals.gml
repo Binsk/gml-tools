@@ -199,7 +199,7 @@ function Callable(_instance, _function, argv=[]) constructor {
 		/// @desc	Creates an identical copy of this callable instance.
 		/// @return {Callable}
 		function duplicate(){
-			return new Callable(method_get_self(method_ref), method_get_index(method_ref), array_duplicate_shallow(argv));
+			return new Callable(method_get_self(method_ref), method_get_index(method_ref), array_concat(argv, []));
 		}
 		#endregion
 
