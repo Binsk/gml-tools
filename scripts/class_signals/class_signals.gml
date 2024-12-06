@@ -126,7 +126,7 @@ function Signaler() constructor{
 	/// @param  {array}     argv=[]     argument array to pass
 	function signal(name, argv=[]){
 		// Look up our signal:
-		var array = signal_map[$ name];
+		var array = array_duplicate_shallow(signal_map[$ name]);
 		if (is_undefined(array)) 
 			return; // No signal w/ this name
 			
@@ -199,11 +199,28 @@ function Callable(_instance, _function, argv=[]) constructor {
 		/// @desc	Creates an identical copy of this callable instance.
 		/// @return {Callable}
 		function duplicate(){
-			return new Callable(method_get_self(method_ref), method_get_index(method_ref), array_concat(argv, []));
+			return new Callable(method_get_self(method_ref), method_get_index(method_ref), array_duplicate_shallow(argv));
 		}
 		#endregion
 
 		#region INIT
 		identifier = md5_string_utf8(string(_instance) + string(_function) + string(argv));
 		#endregion
+}
+
+/// @desc	Creates a shallow copy of the specified array and returns the result.
+function array_duplicate_shallow(array, offset=0, count=-1){
+	if (count < 0)
+		count = array_length(array) - offset;
+	
+	if (count == 0)
+		return [];
+	
+	var narray = array_create(count);
+	var nindex = count - 1;
+	
+	for (var i = offset + count - 1; i >= offset; --i)
+		narray[nindex--] = array[i];
+	
+	return narray;
 }
