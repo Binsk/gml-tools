@@ -19,11 +19,11 @@ for (var i = 0; i < player_len; ++i){
     
     // Perform some extra explicit calls for the joystick axes together to allow for some simpler movement / look
     // code that isn't split across two signals:
-	signaler.signal("joystick.left.axis", i, input_state.joystick.left.axis_x, input_state.joystick.left.axis_y);
-	signaler.signal("joystick.right.axis", i, input_state.joystick.right.axis_x, input_state.joystick.right.axis_y);
+	signaler.signal("joystick.left.axis", [i, input_state.joystick.left.axis_x, input_state.joystick.left.axis_y]);
+	signaler.signal("joystick.right.axis", [i, input_state.joystick.right.axis_x, input_state.joystick.right.axis_y]);
 	
-	signaler.signal(string_ext("joystick.left.axis:{0}", [i]), input_state.joystick.left.axis_x, input_state.joystick.left.axis_y);
-	signaler.signal(string_ext("joystick.right.axis:{0}", [i]), input_state.joystick.right.axis_x, input_state.joystick.right.axis_y);
+	signaler.signal(string_ext("joystick.left.axis:{0}", [i]), [input_state.joystick.left.axis_x, input_state.joystick.left.axis_y]);
+	signaler.signal(string_ext("joystick.right.axis:{0}", [i]), [input_state.joystick.right.axis_x, input_state.joystick.right.axis_y]);
 
     data.input_state = input_state; // Update the state for next frame
 }

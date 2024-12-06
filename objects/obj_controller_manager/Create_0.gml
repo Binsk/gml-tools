@@ -251,7 +251,7 @@ function clear_disconnected(include_reserved=false){
         var data = player_array[i];
         var index = array_get_index(slot_id_reference_array, data.slot_id);
         if (index != i)
-            signaler.signal("slot-changed", index, i);
+            signaler.signal("slot-changed", [index, i]);
     }
     
     return disconnected_count;
@@ -267,7 +267,7 @@ function connect_virtual_controller(){
            var data = player_array[i];
            if (data.connection_state != CONTROLLERMAP_STATE.disconnected) continue;
            
-           signaler.signal("reconnected", i);
+           signaler.signal("reconnected", [i]);
            data.slot_id = -1;
            data.connection_state = CONTROLLERMAP_STATE.connected;
            return i;
@@ -463,7 +463,7 @@ function signal_controller_inputs(data, player_index, new_input_state, key_array
         }
         // If not int, it is an axis and we constantly signal
         else{
-            signaler.signal(label, player_index, new_value);
+            signaler.signal(label, [player_index, new_value]);
             signaler.signal(label + ":" + string(player_index), new_value);
         }
     }
