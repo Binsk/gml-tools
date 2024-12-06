@@ -17,6 +17,7 @@
     {"name":"obj_signalers_demo_circle","order":2,"path":"objects/obj_signalers_demo_circle/obj_signalers_demo_circle.yy",},
     {"name":"obj_signalers_demo_controller","order":1,"path":"objects/obj_signalers_demo_controller/obj_signalers_demo_controller.yy",},
     {"name":"obj_signalers_demo_square","order":3,"path":"objects/obj_signalers_demo_square/obj_signalers_demo_square.yy",},
+    {"name":"class_super","order":1,"path":"scripts/class_super/class_super.yy",},
     {"name":"shd_load_timer_demo_text","order":2,"path":"shaders/shd_load_timer_demo_text/shd_load_timer_demo_text.yy",},
   ],
 }

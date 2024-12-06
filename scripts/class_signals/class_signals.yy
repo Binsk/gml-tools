@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"class_signals",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"class_signals",
+  "parent":{
+    "name":"Classes",
+    "path":"folders/Classes.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
