@@ -68,7 +68,7 @@ function Signaler() constructor{
 	/// @param  {method}    method      method/callale to execute upon call
 	function add_signal(_name, _method){
 		if (not is_method(_method) and not is_instanceof(_method, Callable)){
-			Exception.throw_conditional("[argument1] invalid type, expected [method] or [Callable]!");
+			throw "[argument1] invalid type, expected [method] or [Callable]!";
 			return;
 		}
 		
@@ -83,7 +83,7 @@ function Signaler() constructor{
 	///			of the execution order.
 	function add_signal_front(_name, _method){
 		if (not is_method(_method) and not is_instanceof(_method, Callable)){
-			Exception.throw_conditional("[argument1] invalid type, expected [method] or [Callable]!");
+		throw "[argument1] invalid type, expected [method] or [Callable]!";
 			return;
 		}
 		

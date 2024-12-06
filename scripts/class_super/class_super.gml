@@ -19,7 +19,7 @@ function Super(class) constructor {
 	/// @param	{string}	name	name of the function to register
 	function register(name=""){
 		if (is_undefined(class[$ name])){
-			Exception.throw_conditional(string_ext("failed to register [{0}] as super; method doesn't exist!", [name]));
+			throw string_ext("failed to register [{0}] as super; method doesn't exist!", [name]);
 			return;
 		}
 		
