@@ -158,6 +158,7 @@ function Signaler() constructor{
 function Callable(_instance, _function, argv=[]) constructor {
 		#region PROPERTIES
 		method_ref = method(_instance, _function);
+		safe_ref = weak_ref_create(_instance);
 		identifier = "";
 		self.argv = argv;
 		#endregion
@@ -173,6 +174,9 @@ function Callable(_instance, _function, argv=[]) constructor {
 		///			If a value is undefined then the default pre-defined value will be
 		///			substituted in.
 		function call(argv=[]){
+			if (not weak_ref_alive(safe_ref))	// The data is gone, don't execute
+				return;
+				
 			var other_loop = array_length(argv);
 			var loop = max(array_length(self.argv), other_loop);
 			var nargv = array_create(loop);
